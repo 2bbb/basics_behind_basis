@@ -255,3 +255,16 @@ namespace bbb {
     template <std::size_t size, typename value_t = default_value_t>
     using vector = column_vector<size, value_t>;
 };
+
+#include <iostream>
+
+template <std::size_t row_num, std::size_t col_num, typename value_t>
+std::ostream &operator<<(std::ostream &os, const bbb::matrix<row_num, col_num, value_t> &mat) {
+    for(std::size_t j = 0; j < col_num; j++) {
+        for(std::size_t i = 0; i < row_num - 1; i++) {
+            os << mat[j][i] << ", ";
+        }
+        os << mat[j][row_num - 1] << std::endl;
+    }
+    return os;
+}
