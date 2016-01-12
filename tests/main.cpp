@@ -1,6 +1,3 @@
-#include <iostream>
-#include <matrix.hpp>
-
 #include "./matrix.hpp"
 #include "./vec.hpp"
 
