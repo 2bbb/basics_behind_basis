@@ -15,7 +15,6 @@
 #   endif
 #endif
 
-#include <iostream>
 #include <type_traits>
 #include <array>
 #include <cmath>
@@ -227,3 +226,15 @@ namespace bbb {
         using base_vec<4, value_t>::data;
     };
 };
+
+#include <iostream>
+
+template <std::size_t s, typename value_t>
+std::ostream &operator<<(std::ostream &os, const bbb::base_vec<s, value_t> &v) {
+    os << "(";
+    for(std::size_t i = 0; i < s - 1; i++) {
+        os << v[i] << ", ";
+    }
+    os << v[s - 1] << ")";
+    return os;
+}
