@@ -30,7 +30,7 @@ namespace bbb {
         using column_type = std::array<value_t, col_num>;
         using inner_container_type = std::array<column_type, row_num>;
         inner_container_type data;
-
+        
         constexpr std::size_t row_size() const { return row_num; }
         constexpr std::size_t column_size() const { return col_num; }
 
